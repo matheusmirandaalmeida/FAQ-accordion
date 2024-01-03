@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --font: 'Work Sans', sans-serif;
+  --v-White: hsl(0, 0%, 100%);
+  --v-Light: hsl(275, 100%, 97%);
+  --v-Grayish: hsl(292, 16%, 49%);
+  --v-Dark: hsl(292, 42%, 14%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+}
+
+
+.container-img {
+  display: flex;
+  position: absolute;
+  background-image: url("assets/images/background-pattern-desktop.svg");
+  width: 100%;
+  height: 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--v-Light);
+  overflow: hidden;
+  justify-content: center;
+  align-content: space-evenly;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  max-width: 560px;
+  background-color: var(--v-White);
+  z-index: 2;
+  padding: 40px;
+  border-radius: 10px;
+
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.container-content {
+  max-height: 100vh;
+  position: relative;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  font-size: 3em;
+  color: var(--v-Dark);
+}
+
+img {
+  padding-right: 10px;
+  width: 40px;
+}
+
+h2, h3, h4, h5 {
+  font-family: var(--font);
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--v-Dark);
+  text-transform: lowercase;
+  padding-right: 10px;
+}
+
+h2::first-letter,
+h3::first-letter,
+h4::first-letter,
+h5::first-letter {
+  text-transform: uppercase;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 14px 0px;
+}
+
+.line {
+  padding: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--v-Light);
+}
+
+.containerButton {
+  display: flex;
+  justify-content: space-between; /* Adicionado para alinhar os itens nas extremidades */
+  padding: 10px 0px;
+  width: 100%;
+  align-items: center;
+}
+
+span {
+  font-family: var(--font);
+  color: hsl(292deg 18.14% 68.44%);
+  font-size: 0.9em;
+  padding: 0em 0em;
+  text-align: start;
+  margin-top: 10px; /* Adiciona espaço entre o texto e o botão */
+}
+
+
+button {
+  border: none;
+  width: 3em;
+  height: 3em;
+  background-size: cover;
+}
+
+.myButton {
+  display: flex; /* Adicionado para que o botão não quebre para uma nova linha */
+  align-items: center; /* Adicionado para alinhar verticalmente o conteúdo do botão */
+}
+
+
+.button-expanded {
+  background: url('assets/images/icon-minus.svg') no-repeat;
+  background-size: cover;
+}
+
+.button-collapsed {
+  background: url('assets/images/icon-plus.svg') no-repeat;
+  background-size: cover;
+}
+
+.button-expanded,
+.button-collapsed {
+  width: 3em;
+  height: 3em;
+  background-size: cover;
+}
+
+.mostrarMais {
+  display:none;
+}
+
+
+@media (max-width: 375px) {
+  .container-main {
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .container-content {
+    max-height: none; 
+  }
+
+  h1 {
+    font-size: 1.8em; /* Ajuste conforme necessário */
+  }
+
+  button {
+    width: 3em; /* Ajuste conforme necessário */
+    height: 3em; /* Ajuste conforme necessário */
+  }
+
+  span {
+    font-size: 0.9em; /* Ajuste conforme necessário */
+  }
+}
